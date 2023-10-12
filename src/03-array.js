@@ -9,9 +9,14 @@
  * console.log(lastElement); // 20
  */
 function getLastElement(array) {
-
+    if (array.length === 0) {
+        return undefined;
+    } else {
+        return array[array.length - 1];
+    }
 }
-
+const lastElement = getLastElement([2,4,6,8,10,12,14,16,18,20]);
+console.log(lastElement);
 
 /**
  * This function returns an array of even numbers from the specified start to finish.
@@ -25,8 +30,17 @@ function getLastElement(array) {
  * // numbers will be [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
  */
 function returnEvenNumbers(start, finish) {
-
+    if (start % 2 !== 0) {
+        start++;
+    }
+    const evenNumbers = [];
+    for (let i = start; i <= finish; i += 2) {
+        evenNumbers.push(i);
+    }
+    return evenNumbers;
 }
+const numbers = returnEvenNumbers(2,20);
+console.log(numbers);
 
 
 /**
